@@ -15,9 +15,7 @@ class ClockPainter extends CustomPainter {
   Color minutesNeedleColor;
   Color secondsNeedleColor;
   DateTime now;
-  String textInClock  ;
- 
-  
+  String textInClock;
 
   ClockPainter(
       {required this.now,
@@ -32,8 +30,7 @@ class ClockPainter extends CustomPainter {
       this.hoursNeedleColor = Colors.white,
       this.minutesNeedleColor = Colors.black,
       this.secondsNeedleColor = Colors.teal,
-      this.textInClock = ""
-      });
+      this.textInClock = ""});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -66,8 +63,34 @@ class ClockPainter extends CustomPainter {
     final minutesNeedleWidth = radius * 0.06;
 
     //text
-     var  numbers = ["12" , '1' , '2' , '3' , '4' , '5' ,'6' ,'7' , '8' , '9' , '10' ,'11'];
-     const roman = ["XII" , 'I' , 'II' , 'III' , 'IV' , 'V' ,'VI' ,'VII' , 'VIII' , 'IX' , 'X' ,'XI'];
+    var numbers = [
+      "12",
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      '10',
+      '11'
+    ];
+    const roman = [
+      "XII",
+      'I',
+      'II',
+      'III',
+      'IV',
+      'V',
+      'VI',
+      'VII',
+      'VIII',
+      'IX',
+      'X',
+      'XI'
+    ];
 
     //clock paint
     final clockPaint = Paint()
@@ -185,22 +208,6 @@ class ClockPainter extends CustomPainter {
       }
       //rotate canvas at every angle
       canvas.rotate(angle);
-
-      //     //  **Fix: Smooth Hour Needle Rotation**
-
-      //   }
-      //   double hourAngle =
-      //       ((now.hour % 12) + now.minute / 60) * 30; // Convert to degrees
-      //   double hourRadians = hourAngle * pi / 180; // Convert to radians
-
-      //   Rotate the canvas for hour hand
-      //  canvas.rotate(hourRadians); // Rotate based on the exact time
-      //   Draw hour needle
-      // //   canvas.drawLine(
-      // //     Offset(0, -hoursNeedleBaseRadius),
-      // //     Offset(0, -hoursNeedleLength),
-      // //     hoursNeedlePaint,
-      // //   );
     }
     //restore each layer
     canvas.restore();
